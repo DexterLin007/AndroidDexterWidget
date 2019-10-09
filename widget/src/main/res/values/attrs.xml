@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--2019-08-13,自定义的BaseItemLayout-->
+    <declare-styleable name="BaseItemLayout">
+        <attr name="base_item_label" format="string|reference" />
+        <attr name="base_item_text" format="string|reference" />
+        <attr name="base_item_has_arrow" format="boolean" />
+        <attr name="base_item_line_full" format="boolean" />
+        <attr name="base_item_clickable" format="boolean" />
+    </declare-styleable>
+
+</resources>
