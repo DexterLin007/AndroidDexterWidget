@@ -12,4 +12,4 @@ Android UI Widget
 | base_item_clickable | boolean |是否可点击
 
 ### Dependence
-*   [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode)
+*  [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode)
