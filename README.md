@@ -6,8 +6,6 @@ Gradle:
 implementation 'com.github.DexterLin007:AndroidDexterWidget:1.0'
 
 ```
-
-Android UI Widget
 ## BaseItemLayout
 ![Image text](images/BaseItemLayoutDemo.png)
 ### Attributes
