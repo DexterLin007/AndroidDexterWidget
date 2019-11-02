@@ -1,4 +1,4 @@
-package com.dexterlin.widget
+package com.dexterlin.ui
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar

@@ -1,4 +1,4 @@
-package com.dexterlin.widget.view;
+package com.dexterlin.ui.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,8 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.blankj.utilcode.util.ConvertUtils;
-import com.dexterlin.widget.R;
-import com.dexterlin.widget.util.ViewUtils;
+import com.dexterlin.ui.R;
+import com.dexterlin.ui.util.ViewUtils;
 
 /**
  * Created by dexter on 2019/8/13.
