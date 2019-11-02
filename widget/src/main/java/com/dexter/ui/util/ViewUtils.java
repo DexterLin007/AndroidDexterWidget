@@ -1,4 +1,4 @@
-package com.dexterlin.ui.util;
+package com.dexter.ui.util;
 
 import android.view.View;
 import android.view.ViewGroup;

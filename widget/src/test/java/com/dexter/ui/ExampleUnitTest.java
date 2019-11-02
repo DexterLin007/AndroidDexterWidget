@@ -1,4 +1,4 @@
-package com.dexterlin.ui;
+package com.dexter.ui;
 
 import org.junit.Test;
 
