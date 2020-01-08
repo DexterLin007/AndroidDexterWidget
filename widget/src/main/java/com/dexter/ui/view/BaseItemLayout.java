@@ -6,17 +6,20 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
+import androidx.annotation.ColorRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import com.blankj.utilcode.util.ColorUtils;
 import com.blankj.utilcode.util.ConvertUtils;
 import com.dexter.ui.R;
+import com.dexter.ui.util.ButtonUtils;
 import com.dexter.ui.util.ViewUtils;
 
 /**
  * Created by dexter on 2019/8/13.
  */
-@SuppressWarnings({"UnusedReturnValue", "unused"})
+@SuppressWarnings("UnusedReturnValue")
 @SuppressLint("Recycle")
 public class BaseItemLayout extends LinearLayout {
 
@@ -30,6 +33,8 @@ public class BaseItemLayout extends LinearLayout {
 
     String text;
     String label;
+    int textColor = ColorUtils.getColor(R.color.colorText);
+    int labelColor = ColorUtils.getColor(R.color.colorLabelText);
     boolean hasArrow;
     boolean isLineFull;
     boolean isClickable;
@@ -66,13 +71,17 @@ public class BaseItemLayout extends LinearLayout {
         bodyLayout = findViewById(R.id.layout_base_item_body);
     }
 
+    @SuppressLint("CheckResult")
     private void initView() {
         textTv.setText(text == null ? "null" : text);
         labelTv.setText(label == null ? "null" : label);
+        textTv.setTextColor(textColor);
+        labelTv.setTextColor(labelColor);
         arrowImg.setVisibility(hasArrow ? View.VISIBLE : View.GONE);
         setLineLeadingMargin();
         if (isClickable) {
             bodyLayout.setOnClickListener(v -> {
+                if (ButtonUtils.isFastDoubleClick(R.id.layout_base_item_body)) return;
                 if (onClickListener != null) {
                     onClickListener.onClick(v);
                 }
@@ -91,6 +100,13 @@ public class BaseItemLayout extends LinearLayout {
         return this;
     }
 
+    public BaseItemLayout setText(CharSequence charSequence) {
+        if (charSequence == null) return this;
+        textTv.setText(charSequence);
+        this.text = textTv.getText().toString();
+        return this;
+    }
+
     public BaseItemLayout setIsLineFull(boolean isLineFull) {
         this.isLineFull = isLineFull;
         setLineLeadingMargin();
@@ -101,6 +117,18 @@ public class BaseItemLayout extends LinearLayout {
         if (label == null) return this;
         this.label = label;
         labelTv.setText(label);
+        return this;
+    }
+
+    public BaseItemLayout setTextColor(@ColorRes int textColorRes) {
+        this.textColor = ColorUtils.getColor(textColorRes);
+        textTv.setTextColor(this.textColor);
+        return this;
+    }
+
+    public BaseItemLayout setLabelColor(@ColorRes int labelColorRes) {
+        this.labelColor = ColorUtils.getColor(labelColorRes);
+        labelTv.setTextColor(this.labelColor);
         return this;
     }
 
@@ -119,5 +147,7 @@ public class BaseItemLayout extends LinearLayout {
         hasArrow = typedArray.getBoolean(R.styleable.BaseItemLayout_base_item_has_arrow, true);
         isLineFull = typedArray.getBoolean(R.styleable.BaseItemLayout_base_item_line_full, true);
         isClickable = typedArray.getBoolean(R.styleable.BaseItemLayout_base_item_clickable, true);
+        textColor = typedArray.getColor(R.styleable.BaseItemLayout_base_item_text_color, textColor);
+        labelColor = typedArray.getColor(R.styleable.BaseItemLayout_base_item_label_color, labelColor);
     }
 }
