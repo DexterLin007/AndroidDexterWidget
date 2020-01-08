@@ -7,7 +7,7 @@ implementation 'com.github.DexterLin007:AndroidDexterWidget:1.0'
 
 ```
 ## BaseItemLayout
-![Image text](images/BaseItemLayoutDemo.png)
+![Image text](images/DUI_DEMO_1.png)
 ### Attributes
 |name|format|description|
 |:---:|:---:|:---:|
