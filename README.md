@@ -3,7 +3,7 @@
 
 Gradle:
 ```groovy
-implementation 'com.github.DexterLin007:AndroidDexterWidget:1.0'
+implementation 'com.github.DexterLin007:DUI:1.0'
 
 ```
 ## BaseItemLayout
